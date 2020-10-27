@@ -1,0 +1,37 @@
+#include <stdio.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+int main()
+{
+    struct node *head, *newnode, *temp;
+    int choice, count=0, i;
+    head=0;
+    while(choice)
+    {
+        newnode=(struct node*)(malloc(sizeof(struct node)));
+        printf("Enter the value you want to store in linked list.\n");
+        scanf("%d", &newnode->data);
+        newnode->next=0;
+        if(head==0)
+        {
+            head=temp=newnode;
+        }
+        else
+        {
+            temp->next=newnode;
+            temp=newnode;
+        }
+    printf("If you want to continue.\n");
+    scanf("%d", &choice);
+    count++;
+    }
+    temp=head;
+    for(i=0;i<count;i++)
+    {
+        printf("%d", temp->data);
+        temp=temp->next;
+    }
+}
